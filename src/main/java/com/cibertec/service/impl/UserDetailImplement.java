@@ -8,15 +8,21 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.cibertec.model.Usuario;
 
-import lombok.AllArgsConstructor;
-
-@AllArgsConstructor
 public class UserDetailImplement implements UserDetails {
 
 	@Serial
 	private static final long serialVersionUID = 1L;
 
 	private Usuario usuario;
+	
+	
+
+	public UserDetailImplement(Usuario usuario) {
+		super();
+		this.usuario = usuario;
+	}
+
+
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
